@@ -1,0 +1,42 @@
+.wrapper {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.mainLeft {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mainRight {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hotSale {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mainLeft,
+  .mainRight {
+    flex: none;
+    width: 100%;
+  }
+
+  .hotSale {
+    margin-top: 20px;
+  }
+}

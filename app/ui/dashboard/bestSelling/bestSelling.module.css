@@ -1,0 +1,105 @@
+.container {
+  height: max-content;
+  background-color: var(--bgSoft);
+  padding: 20px 15px 20px 15px;
+  border-radius: 10px;
+}
+
+.title {
+  font-weight: 300;
+  color: var(--textSoft);
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+.table {
+  width: 100%;
+}
+
+.table td {
+  padding: 10px;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.productImage {
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--text);
+  border: none;
+  cursor: pointer;
+}
+
+.productTitle,
+.productDescription {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.productTitle {
+  max-width: 150px;
+}
+
+.productDescription {
+  max-width: 290px;
+  color: white;
+  opacity: 0.5;
+}
+
+.view {
+  background-color: teal;
+}
+
+.delete {
+  background-color: crimson;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .table {
+    overflow-x: auto; /* Allow horizontal scrolling for tables */
+    display: block;
+  }
+
+  .table td {
+    font-size: 14px; /* Adjust font size for smaller screens */
+    white-space: nowrap;
+  }
+
+  .buttons {
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    gap: 5px;
+  }
+
+  .button {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .productTitle {
+    max-width: 100px;
+  }
+
+  .productDescription {
+    max-width: 200px;
+  }
+}

@@ -1,0 +1,57 @@
+:root {
+  --bg: #151c2c;
+  --bgSoft: #182237;
+  --text: white;
+  --textSoft: #b7bac1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px; /* Chiều rộng thanh cuộn dọc */
+  height: 8px; /* Chiều rộng thanh cuộn ngang */
+}
+
+/* Background của thanh cuộn */
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Màu nền */
+  border-radius: 10px; /* Góc bo tròn */
+}
+
+/* Tay cầm của thanh cuộn */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #5d57c9, #7a70db); /* Màu gradient */
+  border-radius: 10px; /* Góc bo tròn */
+}
+
+/* Khi hover vào thanh cuộn */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #4c47b8, #6b63cb); /* Màu khi hover */
+}
+
+/* Thanh cuộn ngang */
+::-webkit-scrollbar-thumb:horizontal {
+  background: linear-gradient(45deg, #5d57c9, #7a70db); /* Giữ nguyên màu */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(93, 87, 201, 0.8); /* Màu sắc có độ trong suốt */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(76, 71, 184, 1); /* Hiển thị rõ hơn khi hover */
+}
