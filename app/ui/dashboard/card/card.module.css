@@ -12,10 +12,21 @@
   background-color: #2e374a;
 }
 
+.iconContainer {
+  display: flex;
+  align-items: center;
+}
+
 .texts {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--textSoft);
 }
 
 .number {
@@ -34,4 +45,8 @@
 
 .negative {
   color: red;
+}
+
+.detailText {
+  color: var(--textSoft);
 }

@@ -1,76 +1,119 @@
-.container {
+.wrapper {
   display: flex;
-  min-height: 100vh;
-  background-color: var(--bg);
-  position: relative;
-}
-
-.content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.mainWrapper {
-  flex: 1;
+  gap: 30px;
   padding: 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--bg);
+  background: var(--bg);
+  min-height: 100vh;
 }
 
 .main {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
-  margin-bottom: 24px;
+  transition: opacity 0.2s ease;
 }
 
-.section {
-  background: var(--bgSoft);
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-.sectionTitle {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 16px;
-  color: var(--textSoft);
-}
-
-@media (max-width: 1200px) {
-  .content {
-    margin-left: 0 !important;
+/* Large screens */
+@media (max-width: 1800px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
   }
+}
 
+/* Medium screens */
+@media (max-width: 1400px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* Small screens */
 @media (max-width: 768px) {
-  .mainWrapper {
-    padding: 16px;
-  }
-
   .cards {
     grid-template-columns: 1fr;
   }
+
+  .wrapper {
+    padding: 16px;
+  }
 }
 
-@media (max-width: 480px) {
-  .mainWrapper {
-    padding: 12px;
-  }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.timeframeSelector {
+  display: inline-flex;
+  gap: 2px;
+  padding: 4px;
+  background-color: var(--bgSoft);
+  border-radius: 12px;
+}
+
+.timeButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+  color: var(--textSoft);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.timeButton:hover {
+  color: var(--text);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.timeButton.active {
+  background-color: var(--bg);
+  color: var(--text);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chartSection {
+  background-color: var(--bgSoft);
+  padding: 24px;
+  border-radius: 16px;
+  margin-top: 10px;
+}
+
+.chartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.chartTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.dropdown {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  cursor: pointer;
 }

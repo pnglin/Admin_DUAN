@@ -1,13 +1,272 @@
 .container {
-  height: max-content;
   background-color: var(--bgSoft);
-  padding: 20px 15px 20px 15px;
-  border-radius: 10px;
+  padding: 24px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: max-content;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.titleSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.titleIcon {
+  font-size: 24px;
+  color: var(--textSoft);
 }
 
 .title {
-  font-weight: 300;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text);
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 14px;
   color: var(--textSoft);
-  margin-bottom: 20px;
-  margin-left: 10px;
+  margin: 4px 0 0 0;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+}
+
+.filterGroup {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.select,
+.datePicker {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 14px;
+  min-width: 120px;
+  transition: all 0.2s ease;
+}
+
+.select:hover,
+.datePicker:hover {
+  border-color: var(--textSoft);
+}
+
+.exportButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.exportButton:hover {
+  background-color: var(--bgSoft);
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.metricCard {
+  background-color: var(--bg);
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.metricLabel {
+  font-size: 14px;
+  color: var(--textSoft);
+}
+
+.metricValue {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.change {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.positive {
+  color: #22c55e;
+  background-color: rgba(34, 197, 94, 0.1);
+}
+
+.negative {
+  color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.chartsContainer {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  min-height: 0;
+}
+
+.mainChart {
+  background-color: var(--bg);
+  padding: 20px;
+  border-radius: 12px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chartsContainer {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr; /* Adjusted ratio to give more space to top products */
+  gap: 24px;
+  min-height: 0;
+}
+
+.mainChart {
+  background-color: var(--bg);
+  padding: 20px;
+  border-radius: 12px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.topProducts {
+  background-color: var(--bg);
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 400px;
+  min-width: 320px; /* Ensure minimum width */
+  overflow-y: auto;
+}
+
+.productItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: var(--bgSoft);
+  transition: transform 0.2s ease;
+  min-height: 60px; /* Fixed height for items */
+}
+
+.productName {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 150px;
+  max-width: 200px;
+}
+
+.productStats {
+  padding: 10px;
+  font-size: 12px;
+  color: var(--textSoft);
+  white-space: nowrap; /* Prevent wrapping of stats */
+}
+
+.productBarFill {
+  height: 100%;
+  background-color: #3b82f6;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+/* Responsive styles */
+@media (max-width: 1280px) {
+  .chartsContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .mainChart,
+  .topProducts {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .controls {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .filterGroup {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .select,
+  .datePicker,
+  .exportButton {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .metricsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+  }
+
+  .metricValue {
+    font-size: 20px;
+  }
+
+  .mainChart,
+  .topProducts {
+    height: 300px;
+  }
+
+  .productItem {
+    padding: 8px;
+  }
 }

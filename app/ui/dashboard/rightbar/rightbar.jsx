@@ -1,47 +1,89 @@
 import React from "react";
 import styles from "./rightbar.module.css";
 import Image from "next/image";
-import { MdPlayCircleFilled, MdReadMore } from "react-icons/md";
+import { MdShoppingCart, MdLocalOffer, MdTrendingUp } from "react-icons/md";
 
 const Rightbar = () => {
   return (
     <div className={styles.container}>
+      {/* Best Selling Products */}
       <div className={styles.item}>
         <div className={styles.bgContainer}>
-          <Image src="/astronaut.png" alt="" fill className={styles.bg} />
+          <Image
+            src="/product-showcase.jpg"
+            alt=""
+            fill
+            className={styles.bg}
+          />
         </div>
         <div className={styles.text}>
-          <span className={styles.notification}>🔥 Available Now</span>
-          <h3 className={styles.title}>
-            How to use the new version of the admin dashboard?
-          </h3>
-          <span className={styles.subtitle}>Takes 4 minutes to learn</span>
-          <p className={styles.desc}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Reprehenderit eius libero perspiciatis di.
-          </p>
+          <span className={styles.notification}>🔥 Top Selling</span>
+          <h3 className={styles.title}>Best Selling Products This Week</h3>
+          <div className={styles.productList}>
+            <div className={styles.productItem}>
+              <span className={styles.productName}>Product A</span>
+              <span className={styles.productSales}>234 sales</span>
+            </div>
+            <div className={styles.productItem}>
+              <span className={styles.productName}>Product B</span>
+              <span className={styles.productSales}>189 sales</span>
+            </div>
+            <div className={styles.productItem}>
+              <span className={styles.productName}>Product C</span>
+              <span className={styles.productSales}>156 sales</span>
+            </div>
+          </div>
           <button className={styles.button}>
-            <MdPlayCircleFilled fontSize={20} />
-            Watch
+            <MdTrendingUp />
+            View All
           </button>
         </div>
       </div>
 
+      {/* Active Promotions */}
       <div className={styles.item}>
         <div className={styles.text}>
-          <span className={styles.notification}>🚀 Coming Soon</span>
-          <h3 className={styles.title}>
-            New server actions are available, partial pre-rendering is coming
-            up!
-          </h3>
-          <span className={styles.subtitle}>Boost your productivity</span>
-          <p className={styles.desc}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Reprehenderit eius libero perspiciatis id.
-          </p>
+          <span className={styles.notification}>🏷️ Active Promotions</span>
+          <h3 className={styles.title}>Current Deals & Discounts</h3>
+          <div className={styles.promoList}>
+            <div className={styles.promoItem}>
+              <span className={styles.promoCode}>SUMMER30</span>
+              <span className={styles.promoDesc}>
+                30% off on summer collection
+              </span>
+            </div>
+            <div className={styles.promoItem}>
+              <span className={styles.promoCode}>FREESHIP</span>
+              <span className={styles.promoDesc}>
+                Free shipping on orders over $50
+              </span>
+            </div>
+          </div>
           <button className={styles.button}>
-            <MdReadMore fontSize={20} />
-            Learn
+            <MdLocalOffer />
+            View All Promotions
+          </button>
+        </div>
+      </div>
+
+      {/* Low Stock Alert */}
+      <div className={styles.item}>
+        <div className={styles.text}>
+          <span className={styles.notification}>⚡ Almost Sold Out</span>
+          <h3 className={styles.title}>Running Low on Stock</h3>
+          <div className={styles.stockList}>
+            <div className={styles.stockItem}>
+              <span className={styles.productName}>Product X</span>
+              <span className={styles.stockCount}>Only 5 left</span>
+            </div>
+            <div className={styles.stockItem}>
+              <span className={styles.productName}>Product Y</span>
+              <span className={styles.stockCount}>Only 3 left</span>
+            </div>
+          </div>
+          <button className={styles.button}>
+            <MdShoppingCart />
+            Manage Inventory
           </button>
         </div>
       </div>
